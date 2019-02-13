@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>ECharts DEMO</title>
+  <meta charset="UTF-8">
+<script src='https://cdn.bootcss.com/echarts/3.4.0/echarts.js'></script>
+
+
+  </head>
+<body>
+
+<div id ='comp_chart'  style="width:600px; height:400px;">
+</div>
+<script>
+      var comp_chart = echarts.init(document.getElementById('comp_chart'));
+      var comp_option = {
+          animation: false,
+          grid: {
+                              top: 10,
+                              bottom:20
+          },
+          legend: {},
+          tooltip: {},
+          xAxis: {
+              type: 'category',
+              // boundaryGap: false,
+              data: ['A','B','C','D','E']
+          },
+          yAxis: {
+              type: 'value',
+              max:20,
+              min:0,
+          },
+          series: [
+              {
+                  name:'a',
+                  color:'#F5000D',
+                  type:'line',
+                  symbolSize: 15,
+                  data:[7, 6, 14, 14, 5]
+              },
+              {
+                  name:'b',
+                  color:'#232323',
+                  type:'line',
+                  symbolSize: 15,
+                  data:[5, 12, 9, 4, 9]
+              }
+          ]
+      };
+      comp_chart.setOption(comp_option);
+</script>
+</body>
+</html>
+
